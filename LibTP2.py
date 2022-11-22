@@ -4,7 +4,7 @@
 #p = phrase rentré par l'utilisateur transformé en liste 
 #T =Table de Transistion
 #M = Mot rentré par l'utilisateur 
-#vm est vla valeur associé au mot qui definit sa fonction dans la phrase
+#vm est la valeur associé au mot qui definit sa fonction dans la phrase
 def Recup_Données(P): # prend la phrase et la transforme en liste avec chaque element de celle si qui est un mot
     p=P.split(" ")
     print(p)
@@ -30,7 +30,7 @@ def VerificationPhrase(D,p,T): # verifie que la phrase est correct
         return
 
 
-def VerificationMot(D,M): #vérifie que les mot de la phrase don dans le dictionnaire
+def VerificationMot(D,M): #vérifie que les mot de la phrase est dans le dictionnaire
     if M in D :
         vm=D[M]
         return vm
