@@ -12,18 +12,14 @@ def Recup_Données(P): # prend la phrase et la transforme en liste avec chaque e
 def VerificationPhrase(D,p,T): # verifie que la phrase est correct
     Etat =0
     i=0
-    while Etat != 8 or Etat !=9 or i <= len(p):
+    while Etat != 8 and Etat !=9 and i <= len(p):
         Valeur_Mot = VerificationMot(D,p[i])
-        print(Valeur_Mot)
-        E = T[Etat]
-        print(E)
-        Etat = E[Valeur_Mot]
-        print(Etat)
-        print(i)
-        i = i+1
-        if Etat == 8:
-            print("erreur")
+        if Valeur_Mot == "erreur":
+            print("Mot non reconnu")
             return
+        E = T[Etat]
+        Etat = E[Valeur_Mot]
+        i = i + 1
     if Etat !=8 and Etat != 9: # si l'etats n'est ni 8 ni 9 le met automatiquement a 8 car phrase non complet
         Etat = 8
     if Etat == 8:
@@ -37,9 +33,7 @@ def VerificationPhrase(D,p,T): # verifie que la phrase est correct
 def VerificationMot(D,M): #vérifie que les mot de la phrase don dans le dictionnaire
     if M in D :
         vm=D[M]
-        print(M,vm)
         return vm
-
     else:
-        print("false")
+        vm ="erreur"
         return
