@@ -10,9 +10,21 @@ def Recup_Données(P):
     return p
 def VerificationPhrase(D,p,T):
     Etat =0
+    i=0
+    while Etat != 8 or 9 or i != len(p):
+        Valeur_Mot = VerificationMot(D,p[i])
+        E = T[Etat]
+        Etat = E[Valeur_Mot]
+        i =+ 1
+    if Etat !=8 and 9:
+        Etat = 8
+    if Etat == 8:
+        print("Phrase incorect")
+        return
+    if Etat == 9:
+        print("phrase correct")
+        return
 
-
-    return
 
 def VerificationMot(D,M):
     vm=D[M]
