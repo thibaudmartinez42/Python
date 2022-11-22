@@ -7,7 +7,6 @@
 #vm est vla valeur associé au mot qui definit sa fonction dans la phrase
 def Recup_Données(P): # prend la phrase et la transforme en liste avec chaque element de celle si qui est un mot
     p=P.split(" ")
-    print(p)
     return p
 def VerificationPhrase(D,p,T): # verifie que la phrase est correct
     Etat =0
@@ -20,15 +19,8 @@ def VerificationPhrase(D,p,T): # verifie que la phrase est correct
         E = T[Etat]
         Etat = E[Valeur_Mot]
         i = i + 1
-    if Etat !=8 and Etat != 9: # si l'etats n'est ni 8 ni 9 le met automatiquement a 8 car phrase non complet
-        Etat = 8
-    if Etat == 8:
-        print("Phrase incorect.")
-        return
-    if Etat == 9:
-        print("phrase correct.")
-        return
-
+    print(T[Etat])
+    return
 
 def VerificationMot(D,M): #vérifie que les mot de la phrase don dans le dictionnaire
     if M in D :
