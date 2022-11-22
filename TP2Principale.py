@@ -10,6 +10,8 @@ Table_Transition = {
 5:[8,5,6,8,8,8],
 6:[8,8,8,8,8,9],
 7:[8,8,8,8,8,9],
+8:"Phrase incorect",
+9:"Phrase correct"
  }
 dictionnaire ={"le" : 0, "la" : 0, "chat" : 2, "souris" : 2, "martin" : 4,
 "mange" : 3, "la" : 0, "petite" : 1, "joli" : 1, "grosse" : 1,
