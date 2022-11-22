@@ -5,10 +5,10 @@
 #T =Table de Transistion
 #M = Mot rentré par l'utilisateur 
 #vm est vla valeur associé au mot qui definit sa fonction dans la phrase
-def Recup_Données(P):
+def Recup_Données(P): # prend la phrase et la transforme en liste avec chaque element de celle si qui est un mot
     p=P.split(" ")
     return p
-def VerificationPhrase(D,p,T):
+def VerificationPhrase(D,p,T): # verifie que la phrase est correct
     Etat =0
     i=0
     while Etat != 8 or 9 or i != len(p):
@@ -16,7 +16,7 @@ def VerificationPhrase(D,p,T):
         E = T[Etat]
         Etat = E[Valeur_Mot]
         i =+ 1
-    if Etat !=8 and 9:
+    if Etat !=8 and 9: # si l'etats n'est ni 8 ni 9 le met automatiquement a 8 car phrase non complet
         Etat = 8
     if Etat == 8:
         print("Phrase incorect")
@@ -26,6 +26,6 @@ def VerificationPhrase(D,p,T):
         return
 
 
-def VerificationMot(D,M):
+def VerificationMot(D,M): #vérifie que les mot de la phrase don dans le dictionnaire
     vm=D[M]
     return vm
