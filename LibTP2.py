@@ -7,25 +7,38 @@
 #vm est vla valeur associé au mot qui definit sa fonction dans la phrase
 def Recup_Données(P):
     p=P.split(" ")
+    print(p)
     return p
 def VerificationPhrase(D,p,T):
     Etat =0
     i=0
-    while Etat != 8 or 9 or i != len(p):
+    while Etat != 8 or Etat !=9 or i <= len(p):
         Valeur_Mot = VerificationMot(D,p[i])
+        print(Valeur_Mot)
         E = T[Etat]
+        print(E)
         Etat = E[Valeur_Mot]
-        i =+ 1
-    if Etat !=8 and 9:
+        print(Etat)
+        print(i)
+        i = i+1
+        if Etat == 8:
+            print("erreur")
+            return
+    if Etat !=8 and Etat != 9:
         Etat = 8
     if Etat == 8:
-        print("Phrase incorect")
+        print("Phrase incorect.")
         return
     if Etat == 9:
-        print("phrase correct")
+        print("phrase correct.")
         return
 
 
 def VerificationMot(D,M):
-    vm=D[M]
-    return vm
+    if M in D :
+        vm=D[M]
+        print(M,vm)
+        return vm
+    else:
+        print("false")
+        return

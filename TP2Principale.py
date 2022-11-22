@@ -18,3 +18,4 @@ dictionnaire ={"le" : 0, "la" : 0, "chat" : 2, "souris" : 2, "martin" : 4,
 print(dictionnaire)
 phrase=input("rentre une phrase a partir du dictionnaire")
 Entree_Act=LibTP2.Recup_Données(phrase)
+LibTP2.VerificationPhrase(dictionnaire,Entree_Act,Table_Transition)
