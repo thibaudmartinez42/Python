@@ -11,18 +11,20 @@ def Recup_Données(P): # prend la phrase et la transforme en liste avec chaque e
 def VerificationPhrase(D,p,T): # verifie que la phrase est correct
     Etat =0
     i=0
-    while Etat != 8 and Etat !=9 and i <= len(p):
+    while Etat != 8 and Etat !=9 and i < len(p):
         Valeur_Mot = VerificationMot(D,p[i])
-        if Valeur_Mot == "erreur":
+        if Valeur_Mot == "erreur":#si le mot n'est pas dans le dictionnaire
             print("Mot non reconnu")
             return
-        E = T[Etat]
+        E = T[Etat]#variable transitoire pour changer la valeur de la variable E
         Etat = E[Valeur_Mot]
-        i = i + 1
+        i +=1
+    if type(T[Etat]) != str:
+        Etat = 8
     print(T[Etat])
     return
 
-def VerificationMot(D,M): #vérifie que les mot de la phrase est dans le dictionnaire
+def VerificationMot(D,M): #vérifie que les mot de la phrase est dans le dictionnaire et renvoie la valeur relié au mot dans le dictionnaire
     if M in D :
         vm=D[M]
         return vm
